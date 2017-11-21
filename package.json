@@ -1,0 +1,33 @@
+{
+  "name": "nauka-gita-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:html",
+    "test:html": "glob-run jshint js/*.js",
+    "build": "npm run build:clean && npm run build:sass && npm run build:autoprefixer && npm run test",
+    "build:clean": "rimraf css/*.css",
+    "build:sass": "sass --sourcemap=none --update css/style.scss:css/style.css",
+    "build:autoprefixer": "autoprefixer-cli css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamw28/nauka-gita-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamw28/nauka-gita-2/issues"
+  },
+  "homepage": "https://github.com/adamw28/nauka-gita-2#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "glob-run": "^0.1.6",
+    "jshint": "^2.9.5",
+    "onchange": "^3.2.1",
+    "parallelshell": "^3.0.2",
+    "rimraf": "^2.6.2"
+  }
+}
